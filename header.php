@@ -28,6 +28,7 @@
         'link_class'      => 'header__nav-link',
       ]);
       ?>
+      <p>テストテキスト</p>
 
       <button class="header__hamburger js-hamburger" aria-label="メニューを開く">
         <span></span><span></span><span></span>

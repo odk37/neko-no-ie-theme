@@ -109,6 +109,16 @@ function neko_register_campaign_post_type(): void {
 }
 add_action('init', 'neko_register_campaign_post_type');
 
+// ACFのJSON保存先をテーマ内に変更
+add_filter('acf/settings/save_json', function () {
+    return get_stylesheet_directory() . '/acf-json';
+});
+
+add_filter('acf/settings/load_json', function ($paths) {
+    $paths[] = get_stylesheet_directory() . '/acf-json';
+    return $paths;
+});
+
 // ─── AJAX: 猫詳細取得 ──────────────────────────────────────
 function get_cat_details() {
     global $wpdb;

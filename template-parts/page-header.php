@@ -1,28 +1,26 @@
 <?php
-$label = get_field('label');
-$heading = get_field('heading');
-$lead = get_field('lead');
+$page_header_content = get_field('page_header_content');
 ?>
 
 <div class="page-header">
 
     <div class="page-header__inner container">
 
-        <?php if (!empty($label)): ?>
+        <?php if (!empty($page_header_content["label"])): ?>
             <p class="page-header__label u-fade-in-up">
-                <?= esc_html($label); ?>
+                <?= esc_html($page_header_content["label"]); ?>
             </p>
         <?php endif; ?>
 
-        <?php if (!empty($heading)): ?>
+        <?php if (!empty($page_header_content["heading"])): ?>
             <h1 class="page-header__heading u-fade-in-up">
-                <?= esc_html($heading); ?>
+                <?= esc_html($page_header_content["heading"]); ?>
             </h1>
         <?php endif; ?>
 
-        <?php if (!empty($lead)): ?>
+        <?php if (!empty($page_header_content["lead"])): ?>
             <p class="page-header__lead u-fade-in-up">
-                <?= nl2br(esc_html($lead)); ?>
+                <?= nl2br(esc_html($page_header_content["lead"])); ?>
             </p>
         <?php endif; ?>
 

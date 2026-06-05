@@ -1,0 +1,188 @@
+/**
+ * store.css
+ * 店舗紹介ページ専用スタイル（BEM記法）
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   店舗概要（.store-overview）
+═══════════════════════════════════════════════════════════ */
+.store-overview__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.store-overview__gallery {}
+
+.store-overview__gallery-main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  aspect-ratio: 4 / 3;
+}
+
+.store-overview__gallery-sub {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.store-overview__gallery-sub .store-overview__gallery-img {
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.store-overview__gallery-main .store-overview__gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-overview__info {}
+
+.store-overview__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-6);
+}
+
+.store-overview__title-en {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-3);
+}
+
+.store-overview__lead {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-loose);
+  margin-bottom: var(--space-4);
+}
+
+.store-overview__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+}
+
+/* ─── 店舗情報テーブル ───────────────────────────────────── */
+.store-overview__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-6);
+}
+
+.store-overview__table-row {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.store-overview__table-head {
+  width: 140px;
+  padding: var(--space-4) var(--space-4) var(--space-4) 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  vertical-align: top;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.store-overview__table-head i {
+  color: var(--color-primary);
+  margin-right: var(--space-2);
+  width: 16px;
+}
+
+.store-overview__table-data {
+  padding: var(--space-4) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+  vertical-align: top;
+}
+
+.store-overview__table-tel {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.store-overview__table-note {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin-left: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Google Maps（.access-map）
+═══════════════════════════════════════════════════════════ */
+.access-map__wrapper {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--space-4);
+}
+
+.access-map__iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+.access-map__note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.access-map__note i {
+  color: var(--color-primary-light);
+  margin-right: var(--space-2);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   スタッフグリッド（.access-staff）
+═══════════════════════════════════════════════════════════ */
+.access-staff__grid {
+  margin-top: var(--space-10);
+}
+
+/* ─── レスポンシブ ───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .store-overview__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+}
+
+@media (max-width: 768px) {
+  .store-overview__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .store-overview__table-head {
+    width: 100px;
+    font-size: var(--font-size-xs);
+  }
+
+  .access-map__iframe {
+    height: 300px;
+  }
+
+  .access-staff__grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,71 @@
+/**
+ * cats.css
+ * 猫一覧ページ専用スタイル（BEM記法）
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   猫一覧（.cats-list）
+═══════════════════════════════════════════════════════════ */
+.cats-list {}
+
+.cats-list__empty {
+  text-align: center;
+  padding: var(--space-20) 0;
+}
+
+.cats-list__empty-text {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-loose);
+  margin-bottom: var(--space-8);
+}
+
+.cats-list__empty-text i {
+  font-size: 3rem;
+  color: var(--color-gray-300);
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   モーダル内スライダー
+═══════════════════════════════════════════════════════════ */
+.modal__swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__swiper .swiper-button-prev,
+.modal__swiper .swiper-button-next {
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.modal__swiper .swiper-button-prev::after,
+.modal__swiper .swiper-button-next::after {
+  font-size: 0.875rem;
+}
+
+.modal__swiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.modal__swiper .swiper-pagination-bullet-active {
+  background-color: var(--color-white);
+}
+
+/* ─── レスポンシブ ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .modal__container {
+    border-radius: var(--radius-lg);
+    max-height: 95vh;
+  }
+
+  .modal__body {
+    padding: var(--space-5);
+  }
+}

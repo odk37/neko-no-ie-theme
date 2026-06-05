@@ -1,0 +1,124 @@
+/**
+ * column.css
+ * 豆知識・コラムページ専用スタイル（BEM記法）
+ */
+
+/* ═══════════════════════════════════════════════════════════
+   カテゴリブロック（.column-category）
+═══════════════════════════════════════════════════════════ */
+.column-category {
+  margin-bottom: var(--space-12);
+}
+
+.column-category__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.column-category__title i {
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
+}
+
+/* ─── アコーディオン Q&A スタイル ───────────────────────── */
+.accordion__question {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  text-align: left;
+  flex: 1;
+}
+
+.accordion__q-mark {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  line-height: 1;
+  padding-top: 2px;
+}
+
+.accordion__answer {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
+  color: var(--color-text-secondary);
+}
+
+.accordion__answer p {
+  margin-bottom: var(--space-4);
+}
+
+.accordion__answer p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion__answer ul,
+.accordion__answer ol {
+  margin: var(--space-3) 0 var(--space-4) var(--space-6);
+}
+
+.accordion__answer ul { list-style: disc; }
+.accordion__answer ol { list-style: decimal; }
+
+.accordion__answer li {
+  margin-bottom: var(--space-2);
+}
+
+.accordion__answer strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   相談誘導（.column-cta）
+═══════════════════════════════════════════════════════════ */
+.column-cta {
+  margin-top: var(--space-12);
+  padding: var(--space-10);
+  background: linear-gradient(135deg, var(--color-secondary-light), var(--color-secondary));
+  border-radius: var(--radius-2xl);
+  text-align: center;
+}
+
+.column-cta__text {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.column-cta__text i {
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+}
+
+.column-cta__actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── レスポンシブ ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .column-cta {
+    padding: var(--space-8) var(--space-5);
+  }
+
+  .column-cta__text {
+    flex-direction: column;
+    font-size: var(--font-size-base);
+  }
+}

@@ -1,0 +1,295 @@
+/**
+ * base.css
+ * リセット・ベーススタイル・ユーティリティクラス
+ */
+
+/* ─── リセット ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base), opacity var(--transition-base);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ─── コンテナ ───────────────────────────────────────────── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ─── セクション共通 ─────────────────────────────────────── */
+.section {
+  padding-block: var(--space-20);
+}
+
+.section--sm {
+  padding-block: var(--space-12);
+}
+
+.section--lg {
+  padding-block: var(--space-32);
+}
+
+.section--bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.section--bg-dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-white);
+}
+
+/* ─── ボタン ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.btn-group--light .btn--primary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.btn-group--light .btn--primary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-group--light .btn--secondary {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.btn-group--light .btn--secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--lg {
+  padding: var(--space-4) var(--space-12);
+  font-size: var(--font-size-md);
+}
+
+.btn--sm {
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--font-size-sm);
+}
+
+/* ─── バッジ ─────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.badge--primary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-dark);
+}
+
+.badge--accent {
+  background-color: var(--color-accent-light);
+  color: var(--color-primary-dark);
+}
+
+.badge--new {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ─── ユーティリティ ─────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+.mt-auto { margin-top: auto; }
+.mb-4    { margin-bottom: var(--space-4); }
+.mb-8    { margin-bottom: var(--space-8); }
+.mb-12   { margin-bottom: var(--space-12); }
+
+.js-scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-scroll-reveal--left {
+  transform: translateX(-30px);
+}
+
+.js-scroll-reveal--left.is-visible {
+  transform: translateX(0);
+}
+
+.js-scroll-reveal--right {
+  transform: translateX(30px);
+}
+
+.js-scroll-reveal--right.is-visible {
+  transform: translateX(0);
+}
+
+/* ─── レスポンシブ ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .section {
+    padding-block: var(--space-12);
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-lead {
+    font-size: var(--font-size-base);
+  }
+}

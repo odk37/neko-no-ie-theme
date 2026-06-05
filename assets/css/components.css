@@ -678,7 +678,7 @@
   z-index: 1;
 }
 
-.page-header__label {
+.page-header__content-label {
   font-family: var(--font-display);
   font-size: var(--font-size-sm);
   color: var(--color-primary);
@@ -687,11 +687,11 @@
   margin-bottom: var(--space-2);
 }
 
-.page-header__label.u-fade-in-up {
+.page-header__content-label.u-fade-in-up {
   animation-delay: 0.3s;
 }
 
-.page-header__heading {
+.page-header__content-heading {
   font-family: var(--font-serif);
   font-size: var(--font-size-heading-1);
   font-weight: var(--font-weight-bold);
@@ -699,11 +699,11 @@
   margin-bottom: var(--space-4);
 }
 
-.page-header__heading.u-fade-in-up {
+.page-header__content-heading.u-fade-in-up {
   animation-delay: 0.6s;
 }
 
-.page-header__lead {
+.page-header__content-lead {
   font-size: var(--font-size-md);
   color: var(--color-text-secondary);
   max-width: 560px;
@@ -711,7 +711,7 @@
   line-height: var(--line-height-relaxed);
 }
 
-.page-header__lead.u-fade-in-up {
+.page-header__content-lead.u-fade-in-up {
   animation-delay: 0.9s;
 }
 
@@ -760,29 +760,6 @@
   height: 2px;
   background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
   margin: var(--space-4) auto 0;
-}
-
-.catch-copy {
-  font-family: var(--font-serif);
-  font-size: var(--font-size-catch);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-dark);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--space-6);
-}
-
-.catch-copy__label {
-  display: block;
-  font-family: var(--font-display);
-  font-size: var(--font-size-sm);
-  color: var(--color-primary);
-  letter-spacing: var(--letter-spacing-wider);
-  text-transform: uppercase;
-  margin-bottom: var(--space-2);
-}
-
-.catch-copy__heading {
-  display: block;
 }
 
 /* ─── パンくずリスト ─────────────────────────────────────── */

@@ -47,18 +47,22 @@ get_template_part('template-parts/page-header');
 
       <!-- 店舗情報テキスト -->
       <div class="store-overview__info js-scroll-reveal js-scroll-reveal--right">
-        <p class="store-overview__catch-copy catch-copy">
-          <span class="store-overview__catch-copy-label catch-copy__label">About Our Store</span>
-          <span class="store-overview__catch-copy-heading catch-copy__heading">猫と人が出会う<br>温かな空間</span>
-        </p>
-        <p class="store-overview__lead">
-          「ねこのいえ」は、猫を愛するスタッフが一頭一頭丁寧に育てた猫たちをご紹介する専門店です。
-          清潔で落ち着いた空間で、猫たちがのびのびと過ごせる環境を整えています。
-        </p>
-        <p class="store-overview__lead">
-          「見学だけでも歓迎です！」予約なしでお気軽にお越しいただけます。
-          スタッフが猫の性格や飼育方法について丁寧にご説明します。
-        </p>
+        <?php  
+          $store_intro = get_field('store_intro');
+        ?>
+        <?php if (!empty($store_intro)): ?>
+          <div class="store-overview__intro-content">
+            <?php if (!empty($store_intro["label"])): ?>
+              <span class="store-overview__intro-label"><?= esc_html($store_intro["label"]); ?></span>
+            <?php endif; ?>
+            <?php if (!empty($store_intro["title"])): ?>
+              <p class="store-overview__intro-title"><?= nl2br(esc_html($store_intro["title"])); ?></p>
+            <?php endif; ?>
+            <?php if (!empty($store_intro["description"])): ?>
+              <p class="store-overview__intro-description"><?= nl2br(esc_html($store_intro["description"])); ?></p>
+            <?php endif; ?>
+          </div>
+        <?php endif; ?>
 
         <!-- 営業情報テーブル -->
         <table class="store-overview__table">

@@ -25,6 +25,7 @@ $news_query = new WP_Query([
   'post_type' => 'post',
   'posts_per_page' => 5,
   'post_status' => 'publish',
+  'category_name'  => 'news',
 ]);
 
 $label = get_field('label');

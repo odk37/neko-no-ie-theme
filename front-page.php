@@ -21,10 +21,10 @@ $featured_cats = $wpdb->get_results(
   ARRAY_A
 );
 
-$wp_news = get_posts([
-  'post_type'      => 'post',
+$news_query = new WP_Query([
+  'post_type' => 'post',
   'posts_per_page' => 5,
-  'post_status'    => 'publish'
+  'post_status' => 'publish',
 ]);
 
 $label = get_field('label');
@@ -335,35 +335,15 @@ $lead = get_field('lead');
       </div>
 
       <div class="top-news__list js-scroll-reveal">
-        <?php if (!empty($wp_news)): ?>
-          <?php foreach ($wp_news as $post): ?>
-            <a href="<?php echo esc_url(get_permalink($post->ID)); ?>" class="top-news__item">
-              <span class="top-news__date">
-                <?php echo esc_html(get_the_date('Y.m.d', $post->ID)); ?>
-              </span>
+        <?php if ($news_query->have_posts()): ?>
+          <?php while ($news_query->have_posts()): $news_query->the_post(); ?>
 
-              <span class="top-news__item-title">
-                <?php echo esc_html(get_the_title($post->ID)); ?>
-              </span>
+            <a href="<?php the_permalink(); ?>" class="top-news__item">
+              <span class="top-news__date"><?php echo get_the_date('Y.m.d'); ?></span>
+              <span class="top-news__item-title"><?php the_title(); ?></span>
             </a>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <!-- フォールバック：サンプルデータ -->
-          <?php
-          $sample_news = [
-            ['date' => '2026.05.20', 'title' => '【お迎えキャンペーン】6月限定！トライアル期間延長のお知らせ'],
-            ['date' => '2026.05.15', 'title' => 'マンチカン・スコティッシュの新しい子が入荷しました'],
-            ['date' => '2026.05.10', 'title' => '【見学会】5月25日（土）子猫ふれあい見学会を開催します'],
-            ['date' => '2026.05.01', 'title' => 'ゴールデンウィーク期間中の営業時間についてのお知らせ'],
-            ['date' => '2026.04.20', 'title' => 'ワクチン接種・健康診断の実施についてご報告'],
-          ];
-          foreach ($sample_news as $news):
-          ?>
-            <a href="<?php echo esc_url(home_url('/news/')); ?>" class="top-news__item">
-              <span class="top-news__date"><?= $news['date'] ?></span>
-              <span class="top-news__item-title"><?= htmlspecialchars($news['title'], ENT_QUOTES, 'UTF-8') ?></span>
-            </a>
-          <?php endforeach; ?>
+
+          <?php endwhile; ?>
         <?php endif; ?>
       </div>
     </div>
